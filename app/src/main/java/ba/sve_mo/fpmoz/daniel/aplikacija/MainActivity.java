@@ -17,7 +17,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        KontektiDB baza = new KontektiDB(getApplicationContext());
+        final KontektiDB baza = new KontektiDB(getApplicationContext());
+
+
+        Button spasi = (Button) findViewById(R.id.spasi);
+        spasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText imeTxt = findViewById(R.id.ime);
+                EditText prezimeTxt = findViewById(R.id.prezime);
+                EditText emailTxt = findViewById(R.id.email);
+
+                baza.dodajKontekt (new Kontekt(0, imeTxt.getText().toString(),
+                                        prezimeTxt.getText().toString(),
+                                        emailTxt.getText().toString()));
+                imeTxt.setText("");
+                prezimeTxt.setText("");
+                emailTxt.setText("");
+
+            }
+        });
         Kontekt k1 = new Kontekt(0, "Daniel", "Vasic", "dvasic1@gmail.com");
         baza.dodajKontekt(k1);
 
