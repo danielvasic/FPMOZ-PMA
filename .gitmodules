@@ -1,0 +1,9 @@
+[submodule "Vjezbe01"]
+	path = Vjezbe01
+	url = ./Vjezbe01
+[submodule "Vjezbe02"]
+	path = Vjezbe02
+	url = ./Vjezbe02
+[submodule "Vjezbe03"]
+	path = Vjezbe03
+	url = ./Vjezbe03
