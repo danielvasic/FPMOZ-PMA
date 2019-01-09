@@ -16,3 +16,6 @@
 [submodule "Vjezbe06"]
 	path = Vjezbe06
 	url = ./Vjezbe06
+[submodule "Vjezbe07"]
+	path = Vjezbe07
+	url = ./Vjezbe07
