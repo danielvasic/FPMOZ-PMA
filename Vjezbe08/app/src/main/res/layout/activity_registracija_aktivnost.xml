@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistracijaAktivnost">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/email_korisnika_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Unesite email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/lozinka_korisnika_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Unesite lozinku"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/registracija_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registracija na sustav" />
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prijava na sustav" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
