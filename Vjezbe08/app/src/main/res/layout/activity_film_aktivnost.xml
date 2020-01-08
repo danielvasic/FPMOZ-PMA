@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".FilmAktivnost">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Naslov filma" />
+
+    <EditText
+        android:id="@+id/naziv_filma_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Molimo unesite naslov filma"
+        android:inputType="none" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Opis filma" />
+
+    <EditText
+        android:id="@+id/opis_filma_txt"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:ems="10"
+        android:hint="Molimo unesite opis filma"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Odaberite sliku" />
+
+    <Button
+        android:id="@+id/otvori_galeriju_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Otvori galeriju" />
+
+    <Button
+        android:id="@+id/dodaj_film_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodaj novi film" />
+</LinearLayout>
