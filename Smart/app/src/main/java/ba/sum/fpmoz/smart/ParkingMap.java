@@ -4,12 +4,14 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 import android.widget.Toast;
+import android.content.Intent;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
@@ -55,6 +57,14 @@ public class ParkingMap extends FragmentActivity implements OnMapReadyCallback {
                 LatLng parkingSpace = new LatLng(p.getLatituda(), p.getLongituda());
                 mMap.addMarker(new MarkerOptions().position(parkingSpace).title(p.getNaziv()).snippet(p.getAdresa()));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parkingSpace, 17.0f));
+                mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(Marker marker) {
+                        Intent i = new Intent(getApplicationContext(), ParkingSpaces.class);
+                        startActivity(i);
+                        return true;
+                    }
+                });
             }
 
             @Override
