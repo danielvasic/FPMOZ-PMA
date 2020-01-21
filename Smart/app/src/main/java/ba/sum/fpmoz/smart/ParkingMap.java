@@ -53,14 +53,13 @@ public class ParkingMap extends FragmentActivity implements OnMapReadyCallback {
             @Override
             public void onResponse(Call<List<Parking>> call, Response<List<Parking>> response) {
                 Parking p = response.body().get(0);
-                Toast.makeText(getApplicationContext(), p.getNaziv(), Toast.LENGTH_LONG).show();
                 LatLng parkingSpace = new LatLng(p.getLatituda(), p.getLongituda());
                 mMap.addMarker(new MarkerOptions().position(parkingSpace).title(p.getNaziv()).snippet(p.getAdresa()));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parkingSpace, 17.0f));
                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
-                        Intent i = new Intent(getApplicationContext(), ParkingSpaces.class);
+                        Intent i = new Intent(getApplicationContext(), ParkingMjesta.class);
                         startActivity(i);
                         return true;
                     }

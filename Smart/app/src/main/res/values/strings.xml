@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Smart</string>
     <string name="title_activity_parking_map">Map</string>
+    <string name="title_activity_rezervacija_parkinga">RezervacijaParkinga</string>
 </resources>

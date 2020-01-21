@@ -20,7 +20,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ParkingSpaces extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
+public class ParkingMjesta extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
 
     @Override
     public void onRefresh() {

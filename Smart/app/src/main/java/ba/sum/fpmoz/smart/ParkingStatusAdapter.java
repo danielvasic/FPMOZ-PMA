@@ -2,12 +2,14 @@ package ba.sum.fpmoz.smart;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.view.LayoutInflater;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,9 +21,11 @@ public class ParkingStatusAdapter extends RecyclerView.Adapter<ParkingStatusAdap
         public TextView textView;
         public TextView statusView;
         public ImageView imageView;
+        public View mView;
 
         public MyViewHolder(View v) {
             super(v);
+            mView = v;
             textView = v.findViewById(R.id.Naziv);
             statusView = v.findViewById(R.id.StatusTxt);
             imageView = v.findViewById(R.id.Status);
@@ -41,7 +45,7 @@ public class ParkingStatusAdapter extends RecyclerView.Adapter<ParkingStatusAdap
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        ParkingMjesto pm = this.parkingMjesta.get(position);
+        final ParkingMjesto pm = this.parkingMjesta.get(position);
         holder.textView.setText(pm.getNaziv());
         if (pm.isZauzeto() == 1) {
             holder.imageView.setImageResource(R.drawable.location_off);
@@ -50,6 +54,14 @@ public class ParkingStatusAdapter extends RecyclerView.Adapter<ParkingStatusAdap
             holder.imageView.setImageResource(R.drawable.location_on);
             holder.statusView.setText("Slobodno");
         }
+        holder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), RezervacijaParkinga.class);
+                i.putExtra("parkingId", String.valueOf(pm.getId()));
+                v.getContext().startActivity(i);
+            }
+        });
     }
 
     @Override
