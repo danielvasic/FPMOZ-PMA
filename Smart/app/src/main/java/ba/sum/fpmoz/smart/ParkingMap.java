@@ -2,7 +2,11 @@ package ba.sum.fpmoz.smart;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 
@@ -27,10 +31,15 @@ public class ParkingMap extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     private Call<List<Parking>> parkingCall = null;
 
+    private TextView slobodnaMjesta;
+    private TextView zauzetaMjesta;
+    private Button parkingMjesta;
+    private Button upute;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parking_map);
+        setContentView(R.layout.activity_parking_details);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -43,6 +52,18 @@ public class ParkingMap extends FragmentActivity implements OnMapReadyCallback {
 
         SmartSum service = retrofit.create(SmartSum.class);
         this.parkingCall = service.dajParking(true);
+        this.slobodnaMjesta = findViewById(R.id.slobodna_mjesta);
+        this.zauzetaMjesta = findViewById(R.id.zauzeta_mjesta);
+        this.parkingMjesta = findViewById(R.id.otvori_parking);
+        this.upute = findViewById(R.id.upute);
+
+        this.parkingMjesta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), ParkingMjesta.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -53,6 +74,10 @@ public class ParkingMap extends FragmentActivity implements OnMapReadyCallback {
             @Override
             public void onResponse(Call<List<Parking>> call, Response<List<Parking>> response) {
                 Parking p = response.body().get(0);
+
+                slobodnaMjesta.setText("Broj slobodnih mjesta: " + String.valueOf(p.getSlobodno()));
+                zauzetaMjesta.setText("Broj zauzetih mjesta: " + String.valueOf(p.getZauzeto()));
+
                 LatLng parkingSpace = new LatLng(p.getLatituda(), p.getLongituda());
                 mMap.addMarker(new MarkerOptions().position(parkingSpace).title(p.getNaziv()).snippet(p.getAdresa()));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parkingSpace, 17.0f));
@@ -62,6 +87,15 @@ public class ParkingMap extends FragmentActivity implements OnMapReadyCallback {
                         Intent i = new Intent(getApplicationContext(), ParkingMjesta.class);
                         startActivity(i);
                         return true;
+                    }
+                });
+
+                upute.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                                Uri.parse("http://maps.google.com/maps?daddr="+p.getLatituda()+","+p.getLongituda()));
+                        startActivity(intent);
                     }
                 });
             }
