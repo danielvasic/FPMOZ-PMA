@@ -21,7 +21,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/emailTxt"
+            android:id="@+id/emailTxt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -57,5 +57,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Prijavi se" />
+
+        <Button
+            android:id="@+id/registerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrirajte se" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

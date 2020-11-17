@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10sp"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/registerMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/displayNameTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="10sp"
+            android:text="Unesite Veše ime i prezime" />
+
+        <EditText
+            android:id="@+id/displayNameInp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Unesite ime i prezime"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/emailTxt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:text="Unesite Vašu email adresu" />
+
+        <EditText
+            android:id="@+id/emialInp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Unesite email adresu"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/passwordTxt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:text="Unesite Vašu lozinku" />
+
+        <EditText
+            android:id="@+id/passwordInp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="nesite Vašu lozinku"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/passwordCnfTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ponovite Vašu lozinku" />
+
+        <EditText
+            android:id="@+id/passwordCnfInp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ponovite Vašu lozinku"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/registerBtn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registriraj se" />
+
+        <Button
+            android:id="@+id/loginBtn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prijavi se" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

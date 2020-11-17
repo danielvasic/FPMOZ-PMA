@@ -3,6 +3,7 @@ package ba.sum.fpmoz.dvasic.pma;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText emailInp;
     private EditText passwordInp;
     private Button loginBtn;
+    private Button registerBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         this.emailInp = findViewById(R.id.emailInp);
         this.passwordInp = findViewById(R.id.passwordInp);
         this.loginBtn = findViewById(R.id.loginBtn);
+        this.registerBtn = findViewById(R.id.registerBtn);
 
         /* Na klik akciju dohvati unos korisnika i probaj ga autenticirati */
 
@@ -50,11 +53,20 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             messageTxt.setText("Uspješno ste se prijavili na sustav.");
                         } else {
-                            System.out.println(task.getException());
                             messageTxt.setText("Nastao je problem s prijavom.");
                         }
                     }
                 });
+            }
+        });
+
+        /* Na klik Registriraj se korisnik otvara novu aktivbnost */
+
+        this.registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(i);
             }
         });
 
