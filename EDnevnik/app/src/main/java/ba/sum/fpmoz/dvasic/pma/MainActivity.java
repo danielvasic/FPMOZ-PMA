@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             messageTxt.setText("Uspješno ste se prijavili na sustav.");
+                            Intent i = new Intent(getApplicationContext(), UserAdminActivity.class);
+                            startActivity(i);
                         } else {
                             messageTxt.setText("Nastao je problem s prijavom.");
                         }
