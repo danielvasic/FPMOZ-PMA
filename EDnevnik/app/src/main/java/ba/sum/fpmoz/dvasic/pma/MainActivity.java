@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             messageTxt.setText("Uspješno ste se prijavili na sustav.");
-                            Intent i = new Intent(getApplicationContext(), UserAdminActivity.class);
+                            Intent i = new Intent(getApplicationContext(), TabbedUserAdminActivity.class);
                             startActivity(i);
                         } else {
                             messageTxt.setText("Nastao je problem s prijavom.");
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /* Na klik Registriraj se korisnik otvara novu aktivbnost */
+        /* Na klik Registriraj se korisnik otvara novu aktivnost */
 
         this.registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
