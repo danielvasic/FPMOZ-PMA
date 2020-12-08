@@ -3,9 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/studentListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ovo je neki tekst" />
+        android:layout_height="match_parent"
+        android:background="#F5F5F5" />
 </LinearLayout>
