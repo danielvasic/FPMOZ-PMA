@@ -20,7 +20,7 @@ public class HomeNavigationActivity extends AppCompatActivity {
         this.userAdminBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), TabbedUserActivity.class);
+                Intent i = new Intent(getApplicationContext(), TabbedUserAdminActivity.class);
                 startActivity(i);
             }
         });
