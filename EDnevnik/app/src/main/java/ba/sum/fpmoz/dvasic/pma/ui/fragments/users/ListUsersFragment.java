@@ -1,4 +1,4 @@
-package ba.sum.fpmoz.dvasic.pma.ui.fragments;
+package ba.sum.fpmoz.dvasic.pma.ui.fragments.users;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,7 +28,7 @@ public class ListUsersFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View userListView = inflater.inflate(R.layout.activity_user_list, container, false);
+        View userListView = inflater.inflate(R.layout.recycled_student_admin, container, false);
         this.studentListView = userListView.findViewById(R.id.studentListView);
         this.db = FirebaseDatabase.getInstance();
         this.ref = this.db.getReference("edenvnik/ucenici");

@@ -1,4 +1,4 @@
-package ba.sum.fpmoz.dvasic.pma.ui.fragments;
+package ba.sum.fpmoz.dvasic.pma.ui.fragments.users;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -29,7 +29,7 @@ public class AddUsersFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View userAdminView = inflater.inflate(R.layout.activity_user_admin, container, false);
+        final View userAdminView = inflater.inflate(R.layout.fragment_add_student_admin, container, false);
 
         this.db = FirebaseDatabase.getInstance();
         this.ref = this.db.getReference("edenvnik/ucenici");

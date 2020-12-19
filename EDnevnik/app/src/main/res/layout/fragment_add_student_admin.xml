@@ -3,65 +3,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F3F3F3"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:padding="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/messageTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/emailTxt1"
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Unesite Vašu email adresu" />
+            android:text="Ime učenika" />
 
         <EditText
-            android:id="@+id/emailInp"
+            android:id="@+id/studentNameInp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Email adresa"
-            android:inputType="textEmailAddress" />
+            android:hint="Unesite ime učenika"
+            android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/passwordTxr"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Unesite Vašu lozinku" />
+            android:text="Prezime učenika" />
 
         <EditText
-            android:id="@+id/passwordInp"
+            android:id="@+id/studentSurnameInp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Vaša lozinka"
-            android:inputType="textPassword" />
+            android:hint="Unesite prezime učenika"
+            android:inputType="textPersonName" />
 
-        <Button
-            android:id="@+id/loginBtn"
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Prijavi se" />
+            android:text="JMBG učenika" />
 
-        <Button
-            android:id="@+id/registerBtn"
+        <EditText
+            android:id="@+id/studentUid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrirajte se" />
+            android:ems="10"
+            android:hint="Unesite jedinstveni JMBG učenika"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/addStudentBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dodaj učenika" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,10 +8,10 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 
 import ba.sum.fpmoz.dvasic.pma.ui.adapters.TabbedAdapter;
-import ba.sum.fpmoz.dvasic.pma.ui.fragments.users.AddUsersFragment;
-import ba.sum.fpmoz.dvasic.pma.ui.fragments.users.ListUsersFragment;
+import ba.sum.fpmoz.dvasic.pma.ui.fragments.users.LoginUserFragment;
+import ba.sum.fpmoz.dvasic.pma.ui.fragments.users.RegisterUserFragment;
 
-public class TabbedUserAdminActivity extends AppCompatActivity {
+public class TabbedUserActivity extends AppCompatActivity {
 
     TabbedAdapter adapter;
     TabLayout layout;
@@ -20,17 +20,18 @@ public class TabbedUserAdminActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tabbed_student);
-        this.layout = findViewById(R.id.userTabLayout);
-        this.pager = findViewById(R.id.userViewPager);
+        setContentView(R.layout.activity_tabbed_user);
+
+        this.layout = findViewById(R.id.tabLayout);
+        this.pager = findViewById(R.id.viewPager);
 
         this.adapter = new TabbedAdapter(getSupportFragmentManager(), 1);
         this.adapter.addFragment(
-                new ListUsersFragment(), "Prikaz svih učenika"
+                new LoginUserFragment(), "Prijavite se na sustav"
         );
 
         this.adapter.addFragment(
-                new AddUsersFragment(), "Dodavanje novih učenika"
+                new RegisterUserFragment(), "Registracija na sustav"
         );
 
         this.pager.setAdapter(this.adapter);

@@ -25,6 +25,11 @@ public class StudentAdapter extends FirebaseRecyclerAdapter<Student, StudentAdap
         super(options);
     }
 
+    public interface ClickListener {
+        public void OnClickListener (View v, int position);
+        public void OnLongClickListener (View v, int position);
+    }
+
     @Override
     protected void onBindViewHolder(@NonNull StudentViewHolder holder, int position, @NonNull Student model) {
         holder.studentName.setText(model.getName());
@@ -35,8 +40,21 @@ public class StudentAdapter extends FirebaseRecyclerAdapter<Student, StudentAdap
     @NonNull
     @Override
     public StudentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.student_view, parent, false);
-        return new StudentAdapter.StudentViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_student_admin, parent, false);
+        StudentViewHolder viewHolder = new StudentAdapter.StudentViewHolder(view);
+
+        viewHolder.setOnClickListener(new ClickListener() {
+            @Override
+            public void OnClickListener(View v, int position) {
+
+            }
+
+            @Override
+            public void OnLongClickListener(View v, int position) {
+                getRef(position);
+            }
+        });
+        return viewHolder;
     }
 
     public class StudentViewHolder extends RecyclerView.ViewHolder{
@@ -44,11 +62,32 @@ public class StudentAdapter extends FirebaseRecyclerAdapter<Student, StudentAdap
         TextView studentSurname;
         TextView studentUid;
 
-        public StudentViewHolder(@NonNull View itemView) {
+        StudentAdapter.ClickListener clickListener;
+
+        public void setOnClickListener(StudentAdapter.ClickListener clickListener){
+            this.clickListener = clickListener;
+        }
+
+        public StudentViewHolder(@NonNull final View itemView) {
             super(itemView);
             studentName = itemView.findViewById(R.id.studentNameTxt);
             studentSurname = itemView.findViewById(R.id.studentSurnameTxt);
             studentUid = itemView.findViewById(R.id.studentUidTxt);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clickListener.OnClickListener(v, getAdapterPosition());
+                }
+            });
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    clickListener.OnLongClickListener(v, getAdapterPosition());
+                    return true;
+                }
+            });
         }
     }
 }

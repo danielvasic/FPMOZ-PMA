@@ -85,10 +85,5 @@
             android:layout_height="wrap_content"
             android:text="Registriraj se" />
 
-        <Button
-            android:id="@+id/loginBtn1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Prijavi se" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
