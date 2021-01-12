@@ -21,7 +21,7 @@ public class TabbedUserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabbed_user);
-
+        setTitle("Prijava na sustav");
         this.layout = findViewById(R.id.tabLayout);
         this.pager = findViewById(R.id.viewPager);
 

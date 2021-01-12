@@ -21,6 +21,7 @@ public class TabbedUserAdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabbed_student);
+        setTitle("Administracija korisnika");
         this.layout = findViewById(R.id.userTabLayout);
         this.pager = findViewById(R.id.userViewPager);
 

@@ -1,8 +1,10 @@
 package ba.sum.fpmoz.dvasic.pma.ui.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +14,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import ba.sum.fpmoz.dvasic.pma.R;
+import ba.sum.fpmoz.dvasic.pma.UserAdminEditActivity;
 import ba.sum.fpmoz.dvasic.pma.model.Student;
 
 public class StudentAdapter extends FirebaseRecyclerAdapter<Student, StudentAdapter.StudentViewHolder> {
@@ -61,6 +64,8 @@ public class StudentAdapter extends FirebaseRecyclerAdapter<Student, StudentAdap
         TextView studentName;
         TextView studentSurname;
         TextView studentUid;
+        Button studentEditBtn;
+        Button studentDeleteBtn;
 
         StudentAdapter.ClickListener clickListener;
 
@@ -73,6 +78,25 @@ public class StudentAdapter extends FirebaseRecyclerAdapter<Student, StudentAdap
             studentName = itemView.findViewById(R.id.studentNameTxt);
             studentSurname = itemView.findViewById(R.id.studentSurnameTxt);
             studentUid = itemView.findViewById(R.id.studentUidTxt);
+            studentEditBtn = itemView.findViewById(R.id.studentEditBtn);
+            studentDeleteBtn = itemView.findViewById(R.id.studentDeleteBtn);
+
+            studentDeleteBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getRef(getAdapterPosition()).removeValue();
+                }
+            });
+
+            studentEditBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String key = getRef(getAdapterPosition()).getKey();
+                    Intent i = new Intent(itemView.getContext(), UserAdminEditActivity.class);
+                    i.putExtra("USER_ID", key);
+                    itemView.getContext().startActivity(i);
+                }
+            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

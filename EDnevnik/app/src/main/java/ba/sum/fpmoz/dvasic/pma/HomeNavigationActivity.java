@@ -16,6 +16,7 @@ public class HomeNavigationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_navigation);
+        setTitle("Dobrodošli u administraciju");
         this.userAdminBtn = findViewById(R.id.usersBtn);
         this.userAdminBtn.setOnClickListener(new View.OnClickListener() {
             @Override

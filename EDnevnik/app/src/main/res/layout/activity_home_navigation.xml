@@ -14,37 +14,99 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/usersBtn"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
-            android:src="@drawable/ic_baseline_face_24"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_row="1"
             app:layout_column="1"
-            app:layout_row="1" />
+            >
 
+            <ImageButton
+                android:id="@+id/usersBtn"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:src="@drawable/ic_baseline_face_24" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10sp"
+                android:text="Korisnici sustava"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_row="2"
+            app:layout_column="1"
+            >
         <ImageButton
             android:id="@+id/classesBtn"
             android:layout_width="150sp"
             android:layout_height="150sp"
-            android:src="@drawable/ic_baseline_groups_24"
-            app:layout_column="2"
-            app:layout_row="1" />
+            android:src="@drawable/ic_baseline_groups_24" />
 
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10sp"
+                android:text="Razredi"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_row="1"
+            app:layout_column="2"
+            >
         <ImageButton
             android:id="@+id/coursesBtn"
             android:layout_width="150sp"
             android:layout_height="150sp"
-            android:src="@drawable/ic_baseline_library_books_24"
-            app:layout_column="1"
-            app:layout_row="2" />
+            android:src="@drawable/ic_baseline_library_books_24" />
 
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10sp"
+                android:text="Predmeti"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_row="2"
+            app:layout_column="2"
+            >
         <ImageButton
             android:id="@+id/enrollmentsBtn"
             android:layout_width="150sp"
             android:layout_height="150sp"
-            android:src="@drawable/ic_baseline_how_to_reg_24"
-            app:layout_column="2"
-            app:layout_row="2" />
+            android:src="@drawable/ic_baseline_how_to_reg_24" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10sp"
+                android:text="Upisi"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
     </androidx.gridlayout.widget.GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
