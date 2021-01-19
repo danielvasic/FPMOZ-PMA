@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserAdminEditActivity"></activity>
+        <activity android:name=".ui.fragments.classes.AddClassesFragment"></activity>
+        <activity android:name=".UserAdminEditActivity" />
+        <activity android:name=".TabbedClassesActivity" />
         <activity android:name=".HomeNavigationActivity" />
         <activity android:name=".TabbedUserActivity">
             <intent-filter>

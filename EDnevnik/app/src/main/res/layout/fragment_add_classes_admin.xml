@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:padding="10sp">
+
+    <TextView
+        android:id="@+id/classesAddLbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jedinstveni identifikator razreda" />
+
+    <EditText
+        android:id="@+id/classesUidAddTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/classesNameLbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Naziv razreda" />
+
+    <EditText
+        android:id="@+id/classesNameAddTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/addClassesBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodaj razred" />
+</LinearLayout>

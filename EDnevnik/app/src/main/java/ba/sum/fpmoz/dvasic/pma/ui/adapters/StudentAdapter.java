@@ -28,10 +28,7 @@ public class StudentAdapter extends FirebaseRecyclerAdapter<Student, StudentAdap
         super(options);
     }
 
-    public interface ClickListener {
-        public void OnClickListener (View v, int position);
-        public void OnLongClickListener (View v, int position);
-    }
+
 
     @Override
     protected void onBindViewHolder(@NonNull StudentViewHolder holder, int position, @NonNull Student model) {
@@ -46,7 +43,7 @@ public class StudentAdapter extends FirebaseRecyclerAdapter<Student, StudentAdap
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_student_admin, parent, false);
         StudentViewHolder viewHolder = new StudentAdapter.StudentViewHolder(view);
 
-        viewHolder.setOnClickListener(new ClickListener() {
+        viewHolder.setOnClickListener(new Adapter.ClickListener() {
             @Override
             public void OnClickListener(View v, int position) {
 
@@ -67,9 +64,9 @@ public class StudentAdapter extends FirebaseRecyclerAdapter<Student, StudentAdap
         Button studentEditBtn;
         Button studentDeleteBtn;
 
-        StudentAdapter.ClickListener clickListener;
+        Adapter.ClickListener clickListener;
 
-        public void setOnClickListener(StudentAdapter.ClickListener clickListener){
+        public void setOnClickListener(Adapter.ClickListener clickListener){
             this.clickListener = clickListener;
         }
 

@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class HomeNavigationActivity extends AppCompatActivity {
 
     private ImageButton userAdminBtn;
+    private ImageButton classesBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,15 @@ public class HomeNavigationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), TabbedUserAdminActivity.class);
+                startActivity(i);
+            }
+        });
+
+        this.classesBtn = findViewById(R.id.classesBtn);
+        this.classesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), TabbedClassesActivity.class);
                 startActivity(i);
             }
         });
