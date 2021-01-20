@@ -20,12 +20,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.FirebaseDatabase;
 
 import ba.sum.fpmoz.dvasic.pma.R;
+import ba.sum.fpmoz.dvasic.pma.model.User;
 
 public class RegisterUserFragment extends Fragment {
 
     private FirebaseAuth mAuth;
+    private FirebaseDatabase db;
     private TextView messageTxt;
     private EditText displayNameInp;
     private EditText emailInp;
@@ -39,6 +42,7 @@ public class RegisterUserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View registerView = inflater.inflate(R.layout.fragment_register_user, container, false);
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
 
         this.messageTxt = registerView.findViewById(R.id.registerMsg);
         this.displayNameInp = registerView.findViewById(R.id.displayNameInp);
@@ -61,7 +65,7 @@ public class RegisterUserFragment extends Fragment {
                                                                                                     @Override
                                                                                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()){
-                                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                    final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                     UserProfileChangeRequest changeRequest = new UserProfileChangeRequest
                                             .Builder()
                                             .setDisplayName(displayName)
@@ -76,9 +80,12 @@ public class RegisterUserFragment extends Fragment {
                                                 messageTxt.setText("Vaš korisnički račun je uspješno napravljen");
                                                 displayNameInp.setText("");
                                                 Log.d("Poruka", "Profil je ažuriran");
+                                                db.getReference("/edenvnik/korisnici").child(user.getUid()).setValue(new User("nastavnik"));
                                             }
                                         }
                                     });
+
+
                                 } else {
                                     Toast.makeText(getContext(), "Nastala je greška s registracijom na sustav: " + task.getException().getMessage().toString(), Toast.LENGTH_LONG).show();
                                 }
