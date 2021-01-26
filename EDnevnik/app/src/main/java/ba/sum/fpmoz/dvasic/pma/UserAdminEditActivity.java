@@ -36,8 +36,6 @@ public class UserAdminEditActivity extends AppCompatActivity {
         this.studentUidEdt = findViewById(R.id.studentUidEdt);
         this.studentEditBtn = findViewById(R.id.studentEditBtn);
 
-
-
         final String key = getIntent().getStringExtra("USER_ID");
 
         this.db = FirebaseDatabase.getInstance();

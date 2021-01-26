@@ -3,10 +3,15 @@ package ba.sum.fpmoz.dvasic.pma;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 
+import ba.sum.fpmoz.dvasic.pma.messages.MessagesController;
+import ba.sum.fpmoz.dvasic.pma.model.Messages;
 import ba.sum.fpmoz.dvasic.pma.ui.adapters.TabbedAdapter;
 import ba.sum.fpmoz.dvasic.pma.ui.fragments.users.AddUsersFragment;
 import ba.sum.fpmoz.dvasic.pma.ui.fragments.users.ListUsersFragment;
@@ -22,6 +27,8 @@ public class TabbedUserAdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabbed_student);
         setTitle("Administracija korisnika");
+
+
         this.layout = findViewById(R.id.userTabLayout);
         this.pager = findViewById(R.id.userViewPager);
 
@@ -36,5 +43,7 @@ public class TabbedUserAdminActivity extends AppCompatActivity {
 
         this.pager.setAdapter(this.adapter);
         this.layout.setupWithViewPager(this.pager);
+
     }
+
 }

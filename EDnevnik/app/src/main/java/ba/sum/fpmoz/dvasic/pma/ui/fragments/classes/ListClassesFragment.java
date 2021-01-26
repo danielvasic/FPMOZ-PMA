@@ -36,6 +36,7 @@ public class ListClassesFragment extends Fragment {
         FirebaseRecyclerOptions<Classes> options = new FirebaseRecyclerOptions
                 .Builder<Classes>()
                 .setQuery(this.ref, Classes.class).build();
+
         this.adapter = new ClassesAdapter(options);
         this.classesRecyclerView.setAdapter(this.adapter);
         return classesListView;
