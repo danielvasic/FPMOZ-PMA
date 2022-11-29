@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "245961396831",
+    "project_id": "filmoteka-8adc2",
+    "storage_bucket": "filmoteka-8adc2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245961396831:android:6c029d94d1909abeb041ea",
+        "android_client_info": {
+          "package_name": "ba.sum.fpmoz.filmoteka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245961396831-he6kbtl705rrjp8a1smhjm79l6t568c4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ8GbIV5kr8FEMtvoCYtp2aIsNHBS4PIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245961396831-he6kbtl705rrjp8a1smhjm79l6t568c4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
