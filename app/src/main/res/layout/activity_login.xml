@@ -6,37 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:orientation="vertical"
+        android:layout_margin="20sp"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/loginEmailTxt"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Unesite email za prijavu"
-            android:inputType="textEmailAddress" />
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:orientation="vertical"
+            android:padding="25sp">
 
-        <EditText
-            android:id="@+id/loginPasswordTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Unesite lozinku za prijavu"
-            android:inputType="textPassword" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="sans-serif-black"
+                android:text="Filmoteka"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="34sp" />
 
-        <Button
-            android:id="@+id/loginBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Prijava na sustav" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_verified_user_24" />
+
+                <EditText
+                    android:id="@+id/loginEmailTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Unesite email za prijavu"
+                    android:inputType="textEmailAddress" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_password_24" />
+
+                <EditText
+                    android:id="@+id/loginPasswordTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Unesite lozinku za prijavu"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prijava na sustav"
+                app:cornerRadius="20sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

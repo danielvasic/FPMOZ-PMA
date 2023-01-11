@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddMovieActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/selectImageBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Odaberi sliku" />
+
+        <Button
+            android:id="@+id/uploadImageBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Učitaj sliku" />
+
+        <ImageView
+            android:id="@+id/imagePreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:src="@tools:sample/avatars" />
+
+        <EditText
+            android:id="@+id/movieTitleEdTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Unesite naslov filma"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/movieGenereEdTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Unesite žanr filma"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/movieScoreEdTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Unesite ocjenu filma"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/movieYearEdTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Unesite godinu objave filma"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/saveMovieBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spasi" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

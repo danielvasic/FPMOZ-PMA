@@ -6,11 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".MovieActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/openAddMovieBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        app:backgroundTint="#3F51B5"
+        app:backgroundTintMode="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_add_box_24"
+        app:tint="#FFFFFF" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/moviesListView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>
